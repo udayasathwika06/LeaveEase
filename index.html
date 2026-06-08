@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeaveEase</title>
+    <script>
+        // Check session role and redirect accordingly
+        const role = localStorage.getItem("role");
+        const studentId = localStorage.getItem("studentId");
+        
+        if (role === "student" && studentId) {
+            window.location.href = "frontend/pages/student-dashboard.html";
+        } else if (role === "mentor") {
+            window.location.href = "frontend/pages/admin-dashboard.html";
+        } else if (role === "administrator") {
+            window.location.href = "frontend/pages/manage-mentors.html";
+        } else {
+            window.location.href = "frontend/pages/login.html";
+        }
+    </script>
+</head>
+<body>
+    <div style="font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <p>Redirecting to LeaveEase...</p>
+    </div>
+</body>
+</html>
